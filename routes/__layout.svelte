@@ -26,7 +26,7 @@
 		box-sizing: border-box;
 		margin: 0;
 		padding: 0;
-		font-family: font.$family;
+		font-family: inherit;
 		border: none;
 		outline: none;
 	}
@@ -34,6 +34,11 @@
 	html,
 	body {
 		height: 100%;
+	}
+
+	body {
+		overflow: hidden;
+		font-family: font.$family;
 	}
 
 	a {

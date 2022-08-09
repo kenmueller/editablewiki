@@ -14,12 +14,18 @@
 		"format": "prettier --write --plugin-search-dir=. ."
 	},
 	"devDependencies": {
+		"@codemirror/commands": "^6.0.1",
+		"@codemirror/lang-html": "^6.1.0",
+		"@codemirror/language": "^6.2.1",
+		"@codemirror/theme-one-dark": "^6.0.0",
+		"@codemirror/view": "^6.2.0",
 		"@sveltejs/adapter-vercel": "next",
 		"@sveltejs/kit": "next",
 		"@types/web-app-manifest": "^1.0.2",
 		"@typescript-eslint/eslint-plugin": "^5.33.0",
 		"@typescript-eslint/parser": "^5.33.0",
 		"autoprefixer": "^10.4.8",
+		"codemirror": "^6.0.1",
 		"eslint": "^8.21.0",
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-plugin-svelte3": "^4.0.0",
