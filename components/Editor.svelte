@@ -51,14 +51,16 @@
 	div {
 		width: 100%;
 		height: 100%;
+		background: colors.$dark-gray;
 
 		:global {
 			.cm-editor {
-				height: 100%;
+				height: 100% !important;
+				outline: none !important;
 			}
 
 			.cm-scroller {
-				font-family: Menlo, monospace;
+				font-family: Menlo, monospace !important;
 			}
 		}
 	}

@@ -16,34 +16,12 @@ export const GET: RequestHandler = async ({ params: { path } }) => {
 
 		return {
 			headers: { 'content-type': 'text/html' },
-			body: `${data.toString()}<script src="/edit.js?v=${VERSION}" async></script>`
+			body: data.toString()
 		}
 	} catch (value) {
 		if ((value as { code: number }).code === ErrorCode.NotFound)
-			return {
-				status: ErrorCode.TemporaryRedirect,
-				headers: { location: `/${normalizePath(path)}/~edit~` },
-				body: ''
-			}
+			return { status: ErrorCode.NotFound, body: 'Page not found' }
 
-		const { code, message } = errorFromValue(value)
-		return { status: code, body: message }
-	}
-}
-
-export const POST: RequestHandler = async ({ request, params: { path } }) => {
-	try {
-		const html = (await request.text()).trim()
-		const file = storage.file(
-			`pages/${encodeURIComponent(normalizePath(path))}`
-		)
-
-		await (html
-			? file.save(html, { contentType: 'text/html' })
-			: file.delete({ ignoreNotFound: true }))
-
-		return { body: '' }
-	} catch (value) {
 		const { code, message } = errorFromValue(value)
 		return { status: code, body: message }
 	}
