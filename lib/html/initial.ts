@@ -2,19 +2,14 @@ const initialHtml = `<!DOCTYPE html>
 <html dir="ltr" lang="en-US">
 	<head>
 		<meta charset="utf-8">
-		<meta
-			name="viewport"
-			content="width=device-width, initial-scale=1, viewport-fit=cover"
-		>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<style>
 			* {
 				box-sizing: border-box;
 			}
 
 			body {
-				font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI',
-					Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
-					'Helvetica Neue', sans-serif;
+				font-family: sans-serif;
 			}
 		</style>
 		<title>Editable Wiki</title>

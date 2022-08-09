@@ -49,7 +49,7 @@
 
 			if (!response.ok) throw await errorFromResponse(response)
 
-			window.location.href = path
+			willSave ? (window.location.href = path) : window.location.reload()
 		} catch (value) {
 			console.log(value)
 			alert(errorFromValue(value).message)
