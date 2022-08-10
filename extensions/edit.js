@@ -1,9 +1,9 @@
-/* eslint-disable */
-
 ;((window, document) => {
+	/** @type {(path: string) => string} */
 	const normalizePath = path =>
 		`/${path.replace(/^\/+/, '').replace(/\/+$/, '')}`
 
+	/** @type {(a: string, b: string) => string} */
 	const join = (a, b) => {
 		a = normalizePath(a)
 		b = normalizePath(b)
