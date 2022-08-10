@@ -4,6 +4,7 @@ import { getStorage } from 'firebase-admin/storage'
 import admin from '$lib/firebase/admin'
 import normalizePath from '$lib/path/normalize'
 import join from '$lib/path/join'
+import editScript from '$lib/html/edit'
 import ErrorCode from '$lib/error/code'
 import errorFromValue from '$lib/error/from/value'
 
@@ -17,7 +18,7 @@ export const GET: RequestHandler = async ({ params: { path } }) => {
 
 		return {
 			headers: { 'content-type': 'text/html' },
-			body: `${data.toString()}<script src="/edit.js?v=${VERSION}" async></script>`
+			body: `${data.toString()}${editScript}`
 		}
 	} catch (value) {
 		if ((value as { code: number }).code === ErrorCode.NotFound)

@@ -4,3 +4,4 @@
 /.vercel_build_output/
 /node_modules/
 /.env
+*.min.*

@@ -3,6 +3,6 @@
 		".eslintrc.cjs",
 		"vite.config.js",
 		"svelte.config.js",
-		"public/**/*.js"
+		"extensions/**/*.js"
 	]
 }

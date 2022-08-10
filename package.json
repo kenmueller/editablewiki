@@ -7,7 +7,8 @@
 		"build": "vite build",
 		"package": "svelte-kit package",
 		"preview": "vite preview",
-		"postinstall": "svelte-kit sync",
+		"minify-edit": "uglifyjs extensions/edit.js -o public/edit.min.js --compress --mangle --mangle-props",
+		"postinstall": "npm run minify-edit && svelte-kit sync",
 		"check": "svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "prettier --check --plugin-search-dir=. . && eslint .",
@@ -38,6 +39,7 @@
 		"svelte-preprocess": "^4.10.7",
 		"tslib": "^2.4.0",
 		"typescript": "^4.7.4",
+		"uglify-js": "^3.16.3",
 		"vite": "^3.0.4"
 	},
 	"private": true
