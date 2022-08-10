@@ -1,4 +1,4 @@
 const normalizePath = (path: string) =>
-	path.replace(/^\/+/, '').replace(/\/+$/, '')
+	`/${path.replace(/^\/+/, '').replace(/\/+$/, '')}`
 
 export default normalizePath

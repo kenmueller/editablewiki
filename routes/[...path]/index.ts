@@ -3,6 +3,7 @@ import { getStorage } from 'firebase-admin/storage'
 
 import admin from '$lib/firebase/admin'
 import normalizePath from '$lib/path/normalize'
+import join from '$lib/path/join'
 import ErrorCode from '$lib/error/code'
 import errorFromValue from '$lib/error/from/value'
 
@@ -22,7 +23,7 @@ export const GET: RequestHandler = async ({ params: { path } }) => {
 		if ((value as { code: number }).code === ErrorCode.NotFound)
 			return {
 				status: ErrorCode.TemporaryRedirect,
-				headers: { location: `/${normalizePath(path)}/~edit~` },
+				headers: { location: join(path, '~edit~') },
 				body: ''
 			}
 

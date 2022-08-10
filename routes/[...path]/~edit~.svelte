@@ -1,7 +1,7 @@
 <script lang="ts" context="module">
 	export const load: Load = async ({ params: { path }, fetch }) => {
 		try {
-			const response = await fetch(`/${normalizePath(path)}/~html~`)
+			const response = await fetch(join(path, '~html~'))
 
 			if (response.status === 404) return {}
 			if (!response.ok) throw await errorFromResponse(response)
@@ -22,6 +22,7 @@
 	import { page } from '$app/stores'
 
 	import normalizePath from '$lib/path/normalize'
+	import join from '$lib/path/join'
 	import initialHtml from '$lib/html/initial'
 	import errorFromResponse from '$lib/error/from/response'
 	import errorFromValue from '$lib/error/from/value'
@@ -32,6 +33,8 @@
 
 	export let value = initialHtml
 
+	$: path = normalizePath($page.params.path)
+
 	$: willSave = Boolean(value.trim())
 	let saveLoading = false
 
@@ -40,13 +43,7 @@
 			if (saveLoading) return
 			saveLoading = true
 
-			const path = `/${normalizePath($page.params.path)}`
-
-			const response = await fetch(path, {
-				method: 'POST',
-				body: value
-			})
-
+			const response = await fetch(path, { method: 'POST', body: value })
 			if (!response.ok) throw await errorFromResponse(response)
 
 			willSave ? (window.location.href = path) : window.location.reload()
@@ -60,8 +57,8 @@
 </script>
 
 <MetaImage />
-<MetaTitle />
-<MetaDescription />
+<MetaTitle value="{path} - Editable Wiki" />
+<MetaDescription value="Edit {path} on Editable Wiki" />
 
 <main>
 	<div>
