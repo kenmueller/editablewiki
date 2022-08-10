@@ -6,6 +6,8 @@
 
 <style lang="scss">
 	iframe {
+		user-select: none;
+		pointer-events: none;
 		width: 100%;
 		height: 100%;
 		overflow-y: auto;
