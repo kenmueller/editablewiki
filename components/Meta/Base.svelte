@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/stores'
 
-	import touch from '../../images/touch.png'
+	// import touch from '../../images/touch.png'
 </script>
 
 <svelte:head>
@@ -11,7 +11,7 @@
 	<link rel="sitemap" href="/sitemap.xml" type="application/xml" />
 
 	<meta name="theme-color" content="white" />
-	<link rel="apple-touch-icon" href={touch} />
+	<!-- <link rel="apple-touch-icon" href={touch} /> -->
 
 	<meta property="og:url" content={$page.url.href} />
 	<meta property="og:site_name" content="Editable Wiki" />

@@ -3,8 +3,8 @@ import type { WebAppManifest } from 'web-app-manifest'
 
 import errorFromValue from '$lib/error/from/value'
 
-import touch from '../images/touch.png'
-import mask from '../images/mask.png'
+// import touch from '../images/touch.png'
+// import mask from '../images/mask.png'
 
 const manifest: WebAppManifest = {
 	dir: 'ltr',
@@ -19,8 +19,8 @@ const manifest: WebAppManifest = {
 	background_color: 'white',
 	categories: ['utilities'],
 	icons: [
-		{ src: touch, sizes: '180x180' },
-		{ src: mask, sizes: '512x512', purpose: 'monochrome maskable' }
+		// { src: touch, sizes: '180x180' },
+		// { src: mask, sizes: '512x512', purpose: 'monochrome maskable' }
 	]
 }
 
