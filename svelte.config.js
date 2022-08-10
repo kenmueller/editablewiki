@@ -29,13 +29,6 @@ const config = {
 			routes: 'routes',
 			serviceWorker: 'lib/worker',
 			template: 'lib/index.html'
-		},
-		csp: {
-			directives: {
-				'base-uri': ['self'],
-				'default-src': ['self'],
-				'style-src': ['self', 'unsafe-inline']
-			}
 		}
 	}
 }
