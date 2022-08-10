@@ -30,6 +30,7 @@
 	import MetaTitle from '../../components/Meta/Title.svelte'
 	import MetaDescription from '../../components/Meta/Description.svelte'
 	import Editor from '../../components/Editor.svelte'
+	import Preview from '../../components/Preview.svelte'
 
 	export let value = initialHtml
 
@@ -71,7 +72,7 @@
 			{willSave ? 'Publish' : 'Delete'}
 		</button>
 	</div>
-	<iframe title="Preview" srcdoc={value} />
+	<Preview {value} />
 </main>
 
 <style lang="scss">
@@ -83,6 +84,7 @@
 
 	div {
 		position: relative;
+		height: 100vh;
 	}
 
 	button {
